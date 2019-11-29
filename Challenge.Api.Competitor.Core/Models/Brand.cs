@@ -1,16 +1,19 @@
+﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 
-namespace Challenge.Api.Competitor.Core.Models
+namespace Challenge.Api.Competitor.Repository
 {
-    public class Brand
+    public partial class Brand
     {
         public Brand()
         {
-            Competitors = new Collection<Competer>();
+            Competer = new HashSet<Competer>();
         }
+
         public int Id { get; set; }
+        public string Code { get; set; }
         public string Name { get; set; }
-        public ICollection<Competer> Competitors { get; set; }
+
+        public virtual ICollection<Competer> Competer { get; set; }
     }
 }

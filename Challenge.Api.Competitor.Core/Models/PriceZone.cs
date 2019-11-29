@@ -1,16 +1,12 @@
+﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 
-namespace Challenge.Api.Competitor.Core.Models
+namespace Challenge.Api.Competitor.Repository
 {
-    public class PriceZone
+    public partial class PriceZone
     {
-        public PriceZone()
-        {
-            Competitors = new Collection<Competer>();
-        }
         public int Id { get; set; }
+        public string Code { get; set; }
         public string Name { get; set; }
-        public ICollection<Competer> Competitors { get; set; }
     }
 }
