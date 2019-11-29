@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Challenge.Api.Competitor.Repository
+namespace Challenge.Api.Competitor.Core.Models
 {
     public partial class Brand
     {

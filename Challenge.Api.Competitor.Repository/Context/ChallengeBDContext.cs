@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Challenge.Api.Competitor.Core.Models;
 
 namespace Challenge.Api.Competitor.Repository.Context
 {

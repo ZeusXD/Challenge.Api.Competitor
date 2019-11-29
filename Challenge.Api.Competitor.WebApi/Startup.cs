@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Challenge.Api.Competitor.WebApi.Extensions;
 
 namespace Challenge.Api.Competitor.WebApi
 {
@@ -26,6 +27,9 @@ namespace Challenge.Api.Competitor.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.ConfigureCors(); //extension for cors    
+            services.ConfigureDependecys(); // extension for class who need dependecy injection
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -35,6 +39,11 @@ namespace Challenge.Api.Competitor.WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.ExceptionHandler();//extension for catch global exeption
+            app.UseCustomExceptionMiddleware();// extension for use middleware which use a custon exception
+
+            //app.UseCors();
 
             app.UseHttpsRedirection();
 
